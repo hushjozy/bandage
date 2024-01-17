@@ -33,7 +33,13 @@ body {
 }
 .centralMod {
   min-height: 80vh;
+  padding: 20px;
+  padding-bottom: 100px;
   min-width: 60vw;
+  max-width: 70vw;
+  position: absolute;
+  border: 2px solid skyblue;
+  top: 10vh;
 }
 .balancetab {
   width: 23%;
