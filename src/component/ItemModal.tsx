@@ -1,7 +1,7 @@
 // components/ItemModal.tsx
 import React from 'react';
 import  Modal from 'react-modal';
-import { CartItem, WishlistItem } from '../redux/slices/cartSlice';
+import { CartItem, WishlistItem } from '../redux/cartSlice';
 import { removeFromCart, removeFromWishlist } from '../redux/cartSlice';
 import { useDispatch } from 'react-redux';
 import { Image } from 'theme-ui';
