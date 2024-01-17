@@ -1,6 +1,6 @@
 // components/ItemModal.tsx
 import React from 'react';
-import  Modal from 'react-modal'; // Replace with your actual modal and table components
+import  Modal from 'react-modal';
 import { CartItem, WishlistItem } from '../redux/slices/cartSlice';
 import { removeFromCart, removeFromWishlist } from '../redux/cartSlice';
 import { useDispatch } from 'react-redux';
