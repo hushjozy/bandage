@@ -4,6 +4,7 @@ import  Modal from 'react-modal'; // Replace with your actual modal and table co
 import { CartItem, WishlistItem } from '../redux/slices/cartSlice';
 import { removeFromCart, removeFromWishlist } from '../redux/cartSlice';
 import { useDispatch } from 'react-redux';
+import { Image } from 'theme-ui';
 
 interface ItemModalProps {
   isOpen: boolean;
@@ -54,7 +55,7 @@ return(
                 {/* {item.hasOwnProperty('quantity') && <td className="py-2 px-4 border w-1/4 balancetab">{(item as CartItem).quantity}</td>} */}
                 {item.hasOwnProperty('price') && <td className="py-2 px-4 border w-1/4 balancetab">${discountedPrice}</td>}
                 <td className="py-2 px-4 border w-16 h-16 w-1/4 balancetab">
-                  <img src={item.thumbnail} alt={item.title} className="w-16 h-16 object-cover" />
+                  <Image alt="" src={item.thumbnail} alt={item.title} className="w-16 h-16 object-cover" />
                     </td>
                     <td className="py-2 px-4 border w-16 h-16 w-1/4 balancetab"><button
 onClick={() => handleRemoveItem(item.id)}        className=" px-10  bg-sky-500 opacity-100 text-white py-2  rounded-md hover:bg-sky-700 focus:outline-none w-auto bg-sky-500"  >

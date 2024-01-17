@@ -7,6 +7,7 @@ import { useSearchParams } from "../../node_modules/next/navigation";
 import { useDispatch,useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
 import ItemModal from "@/component/ItemModal";
+import Image from "next/image";
 
 interface DetailsProps {
     className?: string; 
@@ -99,7 +100,7 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
         <span className="items-center flex justify-between gap-5 max-md:max-w-full max-md:flex-wrap">
           <div className="items-stretch self-stretch flex justify-between gap-2.5 py-1.5">
             <span className="items-stretch flex justify-between gap-1.5 p-2.5 rounded-md">
-              <img
+              <Image alt=""
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/9e9cd324c49336a6c99c6d247942b6b938d6b3c674ae6185475adaa8b2942497?"
                 className="aspect-square object-contain object-center w-4 overflow-hidden shrink-0 max-w-full"
@@ -109,7 +110,7 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
               </div>
             </span>
             <span className="items-stretch flex justify-between gap-1.5 p-2.5 rounded-md">
-              <img
+              <Image alt=""
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/a59bfafc5876173e10ea3ade29b24a7f806f4c8f47069d9dacd4fd9956cd75a5?"
                 className="aspect-square object-contain object-center w-4 overflow-hidden shrink-0 max-w-full"
@@ -126,7 +127,7 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
             <div className="text-white text-sm font-bold leading-6 tracking-wide grow whitespace-nowrap">
               Follow Us :
             </div>
-            <img
+            <Image alt=""
               loading="lazy"
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/93346ea834c57ef02be2e6debde9644629a4c5783d6d6b2ca02668a3b741782b?"
               className="aspect-[4.62] object-contain object-center w-[120px] justify-center items-start overflow-hidden self-stretch shrink-0 max-w-full"
@@ -145,7 +146,7 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
         <div className="text-slate-800 text-sm font-medium leading-7 tracking-wide self-start">
           Shop
         </div>
-        <img
+        <Image alt=""
           loading="lazy"
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/8bb73af223622f27b9e8a2c9b5467fd504f8aa16111e52b72d33d7b4aeea987f?"
           className="aspect-[2] object-contain object-center w-2.5 fill-slate-800 overflow-hidden self-center shrink-0 max-w-full my-auto"
@@ -165,7 +166,7 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
       </span>
       <div className="items-start flex gap-0">
         <span className="items-center self-stretch flex justify-between gap-1.5 p-4 rounded-[37px]">
-          <img
+          <Image alt=""
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/1eadfb9248208403eb804eaad83d89d509dac52ad6f36958ed05e4331e33a720?"
             className="aspect-square object-contain object-center w-3 overflow-hidden shrink-0 max-w-full my-auto"
@@ -174,13 +175,13 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
             Login / Register
           </div>
         </span>
-        <img
+        <Image alt=""
           loading="lazy"
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/7c53e819623fd3eaf742e83aa54e2ac16d02c3bfa5f2c67a6716b6662fbd0bdf?"
           className="aspect-[1.02] object-contain object-center w-[47px] justify-center items-center overflow-hidden self-center shrink-0 max-w-full my-auto"
         />
         <span className="items-stretch self-center flex gap-1.5 my-auto p-4 rounded-[37px]">
-          <img
+          <Image alt=""
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/ca76212e9ea9401542ed3c60931591c6430bd03e51d2eb932d3635605e2d8ff0?"
             className="aspect-square object-contain object-center w-4 overflow-hidden shrink-0 max-w-full"
@@ -191,7 +192,7 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
           </div>
         </span>
         <span className="items-stretch self-center flex gap-1.5 my-auto p-4 rounded-[37px]">
-          <img
+          <Image alt=""
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/6b8456cdd6f6f34dec7b3983135cb608991b2fc120bbfa2208587acc66c889a2?"
             className="aspect-square object-contain object-center w-4 overflow-hidden shrink-0 max-w-full"
@@ -209,7 +210,7 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
           <div className="text-slate-800 text-center text-sm font-bold leading-6 tracking-wide self-stretch">
             Home
           </div>
-          <img
+          <Image alt=""
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/5422296368b8cfcdb259bae1492107f340518b5a7c8f7a1faea106acf39dcf4d?"
             className="aspect-[0.56] object-contain object-center w-[9px] overflow-hidden shrink-0 max-w-full my-auto"
@@ -223,7 +224,7 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
         <div className="w-[1050px] max-w-full py-0.5 max-md:pr-5">
           <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
             <div className="flex flex-col items-stretch w-[53%] max-md:w-full max-md:ml-0">
-              <img
+              <Image alt=""
                 loading="lazy"
                 srcSet={productItem.thumbnail}
                 className="aspect-[0.93] object-contain object-center w-full overflow-hidden grow max-md:max-w-full max-md:mt-10"
@@ -236,27 +237,27 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
                 </div>
                 <span className="flex gap-2.5 mt-4 items-start">
                   <div className="items-stretch flex gap-1.5">
-                    <img
+                    <Image alt=""
                       loading="lazy"
                       src="https://cdn.builder.io/api/v1/image/assets/TEMP/8821eaa30b394c533db44fc150210b48d1153a938d99f9b5ed9af2cd3af34e90?"
                       className="aspect-square object-contain object-center w-[22px] overflow-hidden shrink-0 max-w-full"
                     />
-                    <img
+                    <Image alt=""
                       loading="lazy"
                       src="https://cdn.builder.io/api/v1/image/assets/TEMP/be8f5fda7d73bc5e6d0f3ea4e0e61d61464ac599c05b3aa58f37291e27a43c38?"
                       className="aspect-square object-contain object-center w-[22px] overflow-hidden shrink-0 max-w-full"
                     />
-                    <img
+                    <Image alt=""
                       loading="lazy"
                       src="https://cdn.builder.io/api/v1/image/assets/TEMP/76c6a044048f72e129f169c6b838cb664836a80cae66aef9788b984b19fd46f1?"
                       className="aspect-square object-contain object-center w-[22px] overflow-hidden shrink-0 max-w-full"
                     />
-                    <img
+                    <Image alt=""
                       loading="lazy"
                       src="https://cdn.builder.io/api/v1/image/assets/TEMP/ff72e68d5389c7c4ea1b76757295b3c1111a45779f6fe1a4b4c15616f16dd264?"
                       className="aspect-square object-contain object-center w-[22px] overflow-hidden shrink-0 max-w-full"
                     />
-                    <img
+                    <Image alt=""
                       loading="lazy"
                       src="https://cdn.builder.io/api/v1/image/assets/TEMP/9db51f2767cfc0935f3f7a28db455cd5dde1c17e36066af2834e6ef491e146a7?"
                       className="aspect-square object-contain object-center w-[22px] overflow-hidden shrink-0 max-w-full"
@@ -288,20 +289,20 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
                   <span className="text-white text-center text-sm font-bold leading-6 tracking-wide whitespace-nowrap items-stretch bg-sky-500 self-stretch grow justify-center px-5 py-2.5 rounded-md">
                     Select Options
                   </span>
-                  <img
+                  <Image alt=""
                     loading="lazy"
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/302f9fb81fc31d29023e1deb4e7d6bbd121e1725d8e19ef423a3c7bfd70a44ec?"
                     className="aspect-square object-contain object-center w-10 justify-center items-center overflow-hidden shrink-0 max-w-full self-start"
                     onClick={()=>handleAddToWishlist(productItem)}
 
                   />
-                  <img
+                  <Image alt=""
                     loading="lazy"
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/68cb672f9d1ba10ec9ed92bcd129fb9bf82593728d69d212ae41f0465e38821c?"
                     className="aspect-square object-contain object-center w-10 justify-center items-center overflow-hidden shrink-0 max-w-full self-start"
                   
                   onClick={()=>handleAddToCart(productItem)}/>
-                  <img
+                  <Image alt=""
                     loading="lazy"
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/5275ec0ff01b3fa42c2254ff7701fd1cbe7542ea1b8716022578ca7a843b197d?"
                     className="aspect-square object-contain object-center w-10 justify-center items-center overflow-hidden shrink-0 max-w-full self-start"
@@ -357,7 +358,7 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
               </span>
             </div>
             <div className="flex flex-col items-stretch w-[42%] ml-5 max-md:w-full max-md:ml-0">
-              <img
+              <Image alt=""
                 loading="lazy"
                 srcSet={productItem?.images && productItem?.images[0]}
                 className="aspect-[1.09] object-contain object-center w-full overflow-hidden grow max-md:max-w-full max-md:mt-8"
@@ -376,7 +377,7 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
             <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
               <div className="flex flex-col items-stretch w-3/12 max-md:w-full max-md:ml-0">
                 <div className="items-stretch bg-white flex grow flex-col w-full max-md:mt-8">
-                  <img
+                  <Image alt=""
                     loading="lazy"
                     srcSet="..."
                     className="aspect-[0.85] object-contain object-center w-full overflow-hidden"
@@ -416,7 +417,7 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
               className="bg-white flex-grow flex-shrink-0 max-w-[calc(22% - 1rem)] flex flex-col"
               key={index}
             >
-              <img
+              <Image alt=""
                 loading="lazy"
                 srcSet={product?.thumbnail}
                 className="aspect-[0.77] object-contain object-center w-full h-48 overflow-hidden"
@@ -446,32 +447,32 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
       </div>
       <div className="justify-center items-center bg-neutral-50 self-stretch flex w-full flex-col px-16 max-md:max-w-full max-md:px-5">
         <div className="justify-between items-start flex w-[1054px] max-w-full gap-5 pl-6 pr-9 py-12 max-md:flex-wrap max-md:px-5">
-          <img
+          <Image alt=""
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/b16780f8c7830a78d2dec8cd8d87b469e112bdb78a978524a885328abbf4b66e?"
             className="aspect-[3.03] object-contain object-center w-[103px] overflow-hidden self-center shrink-0 max-w-full my-auto"
           />
-          <img
+          <Image alt=""
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/211df5a86a90b2699d8c6a697fcde8386420556914135a3a4e3fb1c056481c13?"
             className="aspect-[1.41] object-contain object-center w-[83px] overflow-hidden self-center shrink-0 max-w-full my-auto"
           />
-          <img
+          <Image alt=""
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/326019a53ffebfbbb16de0ea698488e054da04050cb81cd209ce0225bda70432?"
             className="aspect-[1.36] object-contain object-center w-[102px] overflow-hidden self-stretch shrink-0 max-w-full"
           />
-          <img
+          <Image alt=""
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/c768580bd1d7433f119840bc13e1bd6f960e3fa0b50b84c4a12f7016c2b0949d?"
             className="aspect-[2.45] object-contain object-center w-[103px] overflow-hidden self-center shrink-0 max-w-full my-auto"
           />
-          <img
+          <Image alt=""
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/48e09736f6b74251e0ac02ad166cd73f63966a10c289c61956f2e7c8adad8c10?"
             className="aspect-[1.68] object-contain object-center w-[104px] overflow-hidden self-center shrink-0 max-w-full my-auto"
           />
-          <img
+          <Image alt=""
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/4c2eb7c85a0d2df1efbb3ba9ccb2f660d967a079911ce0c2f660bad2d1e14d03?"
             className="aspect-[1.06] object-contain object-center w-[76px] overflow-hidden self-center shrink-0 max-w-full my-auto"
@@ -484,17 +485,17 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
             Bandage
           </div>
           <div className="justify-center items-center flex gap-5">
-            <img
+            <Image alt=""
               loading="lazy"
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/c318fce0602f5d97b9b50f478be2d79dc4ef94269d1fd667fb6d258475e216e5?"
               className="aspect-square object-contain object-center w-6 justify-center items-center overflow-hidden self-stretch shrink-0 max-w-full"
             />
-            <img
+            <Image alt=""
               loading="lazy"
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/d150d43b8a7f4e62aefc7809f8e0eae1f53d7d0b79506cea2572a38664f94acc?"
               className="aspect-square object-contain object-center w-6 justify-center items-center overflow-hidden self-stretch shrink-0 max-w-full"
             />
-            <img
+            <Image alt=""
               loading="lazy"
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/acb2e3efa8c41f96fcfd220edf41d88e7f4e37c5d6c051f286f60a358c9a87ec?"
               className="aspect-[1.2] object-contain object-center w-6 justify-center items-center overflow-hidden shrink-0 max-w-full my-auto"
