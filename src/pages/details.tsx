@@ -4,8 +4,8 @@ import { addToCart, addToWishlist } from "@/redux/cartSlice";
 import React from "react";
 import Link from "../../node_modules/next/link";
 import { useSearchParams } from "../../node_modules/next/navigation";
-import { useDispatch,useSelector } from 'react-redux';
-import { RootState } from '../redux/store';
+import { useDispatch,useSelector } from "react-redux";
+import { RootState } from "../redux/store";
 import ItemModal from "@/component/ItemModal";
 import Image from "next/image";
 
@@ -37,7 +37,7 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
   const [products, setProducts] = React.useState<Product[]>([]);
   const dispatch = useDispatch();
   const searchParams = useSearchParams()
-  const id: number = searchParams.get('id')
+  const id: number = searchParams.get("id")
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const wishlist = useSelector((state: RootState) => state.cart.wishlistItems);
   const [isCartModalOpen, setCartModalOpen] = React.useState(false);
@@ -65,7 +65,7 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
       setProductItem(data);
 
     } catch (error) {
-      console.error('Error fetching products:', error);
+      console.error("Error fetching products:", error);
     }
   };
   const handleAddToCart = (item:Item) => {
@@ -83,7 +83,7 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
       const products: Product[] = data.products
       setProducts(products);
     } catch (error) {
-      console.error('Error fetching products:', error);
+      console.error("Error fetching products:", error);
     }
   };
   React.useEffect(() => {
@@ -226,7 +226,7 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
             <div className="flex flex-col items-stretch w-[53%] max-md:w-full max-md:ml-0">
               <Image alt=""
                 loading="lazy"
-                srcSet={productItem.thumbnail}
+                src={productItem.thumbnail}
                 className="aspect-[0.93] object-contain object-center w-full overflow-hidden grow max-md:max-w-full max-md:mt-10"
               />
             </div>
@@ -360,7 +360,7 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
             <div className="flex flex-col items-stretch w-[42%] ml-5 max-md:w-full max-md:ml-0">
               <Image alt=""
                 loading="lazy"
-                srcSet={productItem?.images && productItem?.images[0]}
+                src={productItem?.images && productItem?.images[0]}
                 className="aspect-[1.09] object-contain object-center w-full overflow-hidden grow max-md:max-w-full max-md:mt-8"
               />
             </div>
@@ -379,7 +379,7 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
                 <div className="items-stretch bg-white flex grow flex-col w-full max-md:mt-8">
                   <Image alt=""
                     loading="lazy"
-                    srcSet="..."
+                    src="..."
                     className="aspect-[0.85] object-contain object-center w-full overflow-hidden"
                   />
                   <span className="items-stretch flex flex-col pl-6 pr-16 py-8 max-md:px-5">
@@ -417,9 +417,9 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
               className="bg-white flex-grow flex-shrink-0 max-w-[calc(22% - 1rem)] flex flex-col"
               key={index}
             >
-              <Image alt=""
+              <Image 
                 loading="lazy"
-                srcSet={product?.thumbnail}
+                src={product?.thumbnail}
                 className="aspect-[0.77] object-contain object-center w-full h-48 overflow-hidden"
                 alt={product?.title}
               />

@@ -2,7 +2,7 @@
 
 import React from "react";
 // import { useRouter } from "../../node_modules/next/navigation";
-import Link from 'next/link';
+import Link from "next/link";
 import Image from "next/image";
 
 interface Product {
@@ -26,7 +26,7 @@ interface Product {
       const products: Product[] = data.products
       setProducts(products);
     } catch (error) {
-      console.error('Error fetching products:', error);
+      console.error("Error fetching products:", error);
     }
   };
   
@@ -156,7 +156,7 @@ interface Product {
           <div className="flex flex-col items-stretch w-2/5 max-md:w-full max-md:ml-0">
             <Image alt=""
               loading="lazy"
-              srcSet="/card-cover-5.png"
+              src="/card-cover-5.png"
               className="aspect-[0.73] object-contain object-center w-full overflow-hidden grow max-md:max-w-full max-md:mt-4"
             />
           </div>
@@ -166,7 +166,7 @@ interface Product {
                 <div className="flex-col overflow-hidden relative flex min-h-[300px] w-full items-stretch pb-12 max-md:max-w-full">
                   <Image alt=""
                     loading="lazy"
-                    srcSet="/card-cover-6.jpg"
+                    src="/card-cover-6.jpg"
                     className="absolute h-full w-full object-cover object-center inset-0"
                   />
                   <span className="relative justify-center flex flex-col mb-20 pl-6 pr-20 py-6 items-start max-md:max-w-full max-md:mb-10 max-md:px-5">
@@ -189,7 +189,7 @@ interface Product {
                       <div className="flex-col overflow-hidden relative flex aspect-[1.1066666666666667] w-full items-stretch pb-12">
                         <Image alt=""
                           loading="lazy"
-                          srcSet="/mediabg-cover.png"
+                          src="/mediabg-cover.png"
                           className="absolute h-full w-full object-cover object-center inset-0"
                         />
                         <span className="relative justify-center flex flex-col mb-20 pl-6 pr-20 py-6 items-start max-md:mb-10 max-md:px-5">
@@ -211,7 +211,7 @@ interface Product {
                       <div className="flex-col overflow-hidden relative flex aspect-[1.1033333333333333] w-full items-stretch pb-12">
                         <Image alt=""
                           loading="lazy"
-                          srcSet="/mediabg-cover1.png"
+                          src="/mediabg-cover1.png"
                           className="absolute h-full w-full object-cover object-center inset-0"
                         />
                         <span className="relative justify-center flex flex-col mb-20 pl-6 pr-20 py-6 items-start max-md:mb-10 max-md:px-5">
@@ -265,9 +265,9 @@ interface Product {
               className="bg-white flex-grow flex-shrink-0 max-w-[calc(20% - 1rem)] flex flex-col"
               key={index}
             >
-              <Image alt=""
+              <Image 
                 loading="lazy"
-                srcSet={product?.thumbnail}
+                src={product?.thumbnail}
                 className="aspect-[0.77] object-contain object-center w-full h-48 overflow-hidden"
                 alt={product?.title}
               />
@@ -388,7 +388,7 @@ interface Product {
               <div className="flex-col overflow-hidden relative flex aspect-[1.1266666666666667] w-full pl-2.5 pr-16 pt-5 pb-12 items-start max-md:pr-5">
                 <Image alt=""
                   loading="lazy"
-                  srcSet="/black.png"
+                  src="/black.png"
                   className="absolute h-full w-full object-cover object-center inset-0"
                 />
                 <span className="relative text-white text-center text-sm font-bold leading-6 tracking-wide whitespace-nowrap items-stretch shadow-sm bg-red-500 aspect-[2.4166666666666665] justify-center mb-40 px-2.5 rounded max-md:mb-10">
@@ -409,11 +409,11 @@ interface Product {
                 </span>
                 <div className="text-slate-800 text-xl leading-8 tracking-wide mt-2.5">
                   Loudest à la Madison #1 <br />
-                  (L'integral)
+                  (L"integral)
                 </div>{" "}
                 <div className="text-neutral-500 text-sm leading-5 tracking-wide mt-2.5">
                   We focus on ergonomics and meeting <br />
-                  you where you work. It's only a <br />
+                  you where you work. It"s only a <br />
                   keystroke away.
                 </div>
                 <div className="justify-between items-stretch flex w-full gap-5 mt-2.5 py-4">
@@ -456,7 +456,7 @@ interface Product {
               <div className="flex-col overflow-hidden relative flex aspect-[1.16] w-full pl-5 pr-16 pt-5 pb-12 items-start max-md:pr-5">
                 <Image alt=""
                   loading="lazy"
-                  srcSet="/white.png"
+                  src="/white.png"
                   className="absolute h-full w-full object-cover object-center inset-0"
                 />
                 <span className="relative text-white text-center text-sm font-bold leading-6 tracking-wide whitespace-nowrap items-stretch shadow-sm bg-red-500 aspect-[2.4166666666666665] justify-center mb-40 px-2.5 rounded max-md:mb-10">
@@ -477,11 +477,11 @@ interface Product {
                 </span>
                 <div className="text-slate-800 text-xl leading-8 tracking-wide mt-2.5">
                   Loudest à la Madison #1 <br />
-                  (L'integral)
+                  (L"integral)
                 </div>{" "}
                 <div className="text-neutral-500 text-sm leading-5 tracking-wide mt-2.5">
                   We focus on ergonomics and meeting <br />
-                  you where you work. It's only a <br />
+                  you where you work. It"s only a <br />
                   keystroke away.
                 </div>
                 <div className="justify-between items-stretch flex w-full gap-5 mt-2.5 py-4">
@@ -524,7 +524,7 @@ interface Product {
               <div className="flex-col overflow-hidden relative flex aspect-[1.13] w-full pl-5 pr-16 pt-5 pb-12 items-start max-md:pr-5">
                 <Image alt=""
                   loading="lazy"
-                  srcSet="/green.png"
+                  src="/green.png"
                   className="absolute h-full w-full object-cover object-center inset-0"
                 />
                 <span className="relative text-white text-center text-sm font-bold leading-6 tracking-wide whitespace-nowrap items-stretch shadow-sm bg-red-500 aspect-[2.4166666666666665] justify-center mb-40 px-2.5 rounded max-md:mb-10">
@@ -545,11 +545,11 @@ interface Product {
                 </span>
                 <div className="text-slate-800 text-xl leading-8 tracking-wide mt-2.5">
                   Loudest à la Madison #1 <br />
-                  (L'integral)
+                  (L"integral)
                 </div>{" "}
                 <div className="text-neutral-500 text-sm leading-5 tracking-wide mt-2.5">
                   We focus on ergonomics and meeting <br />
-                  you where you work. It's only a <br />
+                  you where you work. It"s only a <br />
                   keystroke away.
                 </div>
                 <div className="justify-between items-stretch flex w-full gap-5 mt-2.5 py-4">
@@ -602,7 +602,7 @@ interface Product {
             <span className="justify-center items-start bg-white self-stretch flex flex-col mt-7 py-8 rounded-md max-md:max-w-full">
               <Image alt=""
                 loading="lazy"
-                srcSet="/user1.png"
+                src="/user1.png"
                 className="aspect-square object-contain object-center w-[90px] justify-center items-center overflow-hidden self-center max-w-full"
               />
               <div className="items-stretch self-center flex w-[130px] max-w-full gap-1.5 mt-5">
@@ -653,17 +653,17 @@ interface Product {
                 <div className="flex grow flex-col items-center max-md:mt-5">
                   <Image alt=""
                     loading="lazy"
-                    srcSet="/col1.png"
+                    src="/col1.png"
                     className="aspect-square object-contain object-center w-[143px] overflow-hidden"
                   />
                   <Image alt=""
                     loading="lazy"
-                    srcSet="/col2.png"
+                    src="/col2.png"
                     className="aspect-[1.01] object-contain object-center w-[143px] overflow-hidden mt-4"
                   />
                   <Image alt=""
                     loading="lazy"
-                    srcSet="/col3.png"
+                    src="/col3.png"
                     className="aspect-[1.31] object-contain object-center w-[143px] overflow-hidden mt-4"
                   />
                 </div>
@@ -672,17 +672,17 @@ interface Product {
                 <div className="flex grow flex-col items-center max-md:mt-5">
                   <Image alt=""
                     loading="lazy"
-                    srcSet="/col4.png"
+                    src="/col4.png"
                     className="aspect-[0.99] object-contain object-center w-[142px] overflow-hidden"
                   />
                   <Image alt=""
                     loading="lazy"
-                    srcSet="/col5.png"
+                    src="/col5.png"
                     className="aspect-square object-contain object-center w-[142px] overflow-hidden mt-4"
                   />
                   <Image alt=""
                     loading="lazy"
-                    srcSet="/col6.png"
+                    src="/col6.png"
                     className="aspect-[1.3] object-contain object-center w-[142px] overflow-hidden mt-4"
                   />
                 </div>
@@ -691,17 +691,17 @@ interface Product {
                 <div className="flex grow flex-col items-center max-md:mt-5">
                   <Image alt=""
                     loading="lazy"
-                    srcSet="/col7.png"
+                    src="/col7.png"
                     className="aspect-square object-contain object-center w-[143px] overflow-hidden"
                   />
                   <Image alt=""
                     loading="lazy"
-                    srcSet="/col8.png"
+                    src="/col8.png"
                     className="aspect-[1.01] object-contain object-center w-[143px] overflow-hidden mt-4"
                   />
                   <Image alt=""
                     loading="lazy"
-                    srcSet="/col9.png"
+                    src="/col9.png"
                     className="aspect-[1.31] object-contain object-center w-[143px] overflow-hidden mt-4"
                   />
                 </div>
@@ -716,7 +716,7 @@ interface Product {
     <div className="flex-col overflow-hidden relative flex min-h-[640px] w-full items-center px-20 py-12 max-md:max-w-full max-md:px-5">
       <Image alt=""
         loading="lazy"
-        srcSet="/cook.png"
+        src="/cook.png"
         className="absolute h-full w-full object-cover object-center inset-0"
       />
       <div className="relative text-sky-500 text-center text-sm font-bold leading-6 tracking-wide whitespace-nowrap mt-28 max-md:mt-10">
