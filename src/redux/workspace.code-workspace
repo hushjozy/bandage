@@ -1,0 +1,46 @@
+{
+  "folders": [
+	{
+		"path": "../../../../../../MAE/mae"
+	},
+	{
+		"path": "../../../../mae"
+	},
+	{
+		"path": "../../../../Mae-admin"
+	},
+	{
+		"path": "../../../../test"
+	},
+	{
+		"path": "../../../../NewPortfolio"
+	},
+	{
+		"path": "../../../../Maeedit/mae_waitlist/mae_waitlist"
+	},
+	{
+		"path": "../../.."
+	},
+	{
+		"path": "../../../../remedy_mobiles"
+	},
+	{
+		"path": "../../../../influencer_backend"
+	},
+	{
+		"path": "../../../../influencer_socket"
+	},
+	{
+		"path": "../../../../bammby_app"
+	},
+	{
+		"path": "../../../../i_influence"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "faces",
+    "search.exclude": {
+      "**/node_modules": false
+    }
+  }
+}
