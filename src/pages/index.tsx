@@ -409,11 +409,11 @@ interface Product {
                 </span>
                 <div className="text-slate-800 text-xl leading-8 tracking-wide mt-2.5">
                   Loudest à la Madison #1 <br />
-                  (L"integral)
+                  (L&quotintegral)
                 </div>{" "}
                 <div className="text-neutral-500 text-sm leading-5 tracking-wide mt-2.5">
                   We focus on ergonomics and meeting <br />
-                  you where you work. It"s only a <br />
+                  you where you work. It&quots only a <br />
                   keystroke away.
                 </div>
                 <div className="justify-between items-stretch flex w-full gap-5 mt-2.5 py-4">
@@ -477,11 +477,11 @@ interface Product {
                 </span>
                 <div className="text-slate-800 text-xl leading-8 tracking-wide mt-2.5">
                   Loudest à la Madison #1 <br />
-                  (L"integral)
+                  (L&quotintegral)
                 </div>{" "}
                 <div className="text-neutral-500 text-sm leading-5 tracking-wide mt-2.5">
                   We focus on ergonomics and meeting <br />
-                  you where you work. It"s only a <br />
+                  you where you work. It&quots only a <br />
                   keystroke away.
                 </div>
                 <div className="justify-between items-stretch flex w-full gap-5 mt-2.5 py-4">
@@ -545,11 +545,11 @@ interface Product {
                 </span>
                 <div className="text-slate-800 text-xl leading-8 tracking-wide mt-2.5">
                   Loudest à la Madison #1 <br />
-                  (L"integral)
+                  (L&quotintegral)
                 </div>{" "}
                 <div className="text-neutral-500 text-sm leading-5 tracking-wide mt-2.5">
                   We focus on ergonomics and meeting <br />
-                  you where you work. It"s only a <br />
+                  you where you work. It&quots only a <br />
                   keystroke away.
                 </div>
                 <div className="justify-between items-stretch flex w-full gap-5 mt-2.5 py-4">
