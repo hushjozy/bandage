@@ -46,7 +46,6 @@ interface Product {
           <div className="items-stretch self-stretch flex justify-between gap-2.5 py-px">
             <span className="items-center shadow-sm flex justify-between gap-1.5 p-2.5 rounded-md">
               <Image alt=""
-                loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/5d6b81201b162fed63ccdeed112c1878a69cc1a4c783eb37204f62d98c0d8515?"
                 className="aspect-square object-contain object-center w-4 overflow-hidden shrink-0 max-w-full my-auto"
               />
@@ -56,7 +55,6 @@ interface Product {
             </span>
             <span className="items-center flex justify-between gap-1.5 p-2.5 rounded-md">
               <Image alt=""
-                loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/f962c81d22cdf4fad746c4e87c87601f68a55ea1de7b165fe713a4d5103e90b7?"
                 className="aspect-square object-contain object-center w-4 overflow-hidden shrink-0 max-w-full my-auto"
               />
@@ -165,8 +163,7 @@ interface Product {
               <div className="bg-white flex flex-col justify-center items-stretch max-md:max-w-full">
                 <div className="flex-col overflow-hidden relative flex min-h-[300px] w-full items-stretch pb-12 max-md:max-w-full">
                   <Image alt=""
-                    loading="lazy"
-                    src="/card-cover-6.jpg"
+                        src="/card-cover-6.jpg"
                     className="absolute h-full w-full object-cover object-center inset-0"
                   />
                   <span className="relative justify-center flex flex-col mb-20 pl-6 pr-20 py-6 items-start max-md:max-w-full max-md:mb-10 max-md:px-5">
@@ -188,8 +185,7 @@ interface Product {
                     <div className="bg-white flex grow flex-col justify-center items-stretch w-full max-md:mt-4">
                       <div className="flex-col overflow-hidden relative flex aspect-[1.1066666666666667] w-full items-stretch pb-12">
                         <Image alt=""
-                          loading="lazy"
-                          src="/mediabg-cover.png"
+                                    src="/mediabg-cover.png"
                           className="absolute h-full w-full object-cover object-center inset-0"
                         />
                         <span className="relative justify-center flex flex-col mb-20 pl-6 pr-20 py-6 items-start max-md:mb-10 max-md:px-5">
@@ -210,8 +206,7 @@ interface Product {
                     <div className="bg-white flex grow flex-col justify-center items-stretch w-full max-md:mt-4">
                       <div className="flex-col overflow-hidden relative flex aspect-[1.1033333333333333] w-full items-stretch pb-12">
                         <Image alt=""
-                          loading="lazy"
-                          src="/mediabg-cover1.png"
+                                    src="/mediabg-cover1.png"
                           className="absolute h-full w-full object-cover object-center inset-0"
                         />
                         <span className="relative justify-center flex flex-col mb-20 pl-6 pr-20 py-6 items-start max-md:mb-10 max-md:px-5">
@@ -266,7 +261,6 @@ interface Product {
               key={index}
             >
               <Image 
-                loading="lazy"
                 src={product?.thumbnail}
                 className="aspect-[0.77] object-contain object-center w-full h-48 overflow-hidden"
                 alt={product?.title}
@@ -322,7 +316,6 @@ interface Product {
           <div className="flex flex-col items-stretch w-[33%] max-md:w-full max-md:ml-0">
             <span className="items-center flex flex-col px-10 py-9 max-md:mt-10 max-md:px-5">
               <Image alt=""
-                loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/65ec244dd5f4293dbe8c15fe07f110de1e06bb7396eb6f450d48d1cab776fb7f?"
                 className="aspect-square object-contain object-center w-[72px] justify-center items-center overflow-hidden max-w-full"
               />
@@ -337,7 +330,6 @@ interface Product {
           <div className="flex flex-col items-stretch w-[33%] ml-5 max-md:w-full max-md:ml-0">
             <span className="items-center flex grow flex-col px-10 py-9 max-md:mt-10 max-md:px-5">
               <Image alt=""
-                loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/6c0769c781f3ea339142bb6e12e04edfe8a8e1924363c7bc9d5f82957dcbdb53?"
                 className="aspect-square object-contain object-center w-[72px] justify-center items-center overflow-hidden max-w-full"
               />
@@ -353,7 +345,6 @@ interface Product {
           <div className="flex flex-col items-stretch w-[33%] ml-5 max-md:w-full max-md:ml-0">
             <span className="items-center flex flex-col px-10 py-9 max-md:mt-10 max-md:px-5">
               <Image alt=""
-                loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/ae816ffed84647634f93cd0c9cf5f9327c0c0f021bb77b8472d130ee96370e1b?"
                 className="aspect-square object-contain object-center w-[72px] justify-center items-center overflow-hidden max-w-full"
               />
@@ -387,8 +378,7 @@ interface Product {
             <div className="items-stretch shadow-sm bg-white flex grow flex-col w-full max-md:mt-2.5">
               <div className="flex-col overflow-hidden relative flex aspect-[1.1266666666666667] w-full pl-2.5 pr-16 pt-5 pb-12 items-start max-md:pr-5">
                 <Image alt=""
-                  loading="lazy"
-                  src="/black.png"
+                    src="/black.png"
                   className="absolute h-full w-full object-cover object-center inset-0"
                 />
                 <span className="relative text-white text-center text-sm font-bold leading-6 tracking-wide whitespace-nowrap items-stretch shadow-sm bg-red-500 aspect-[2.4166666666666665] justify-center mb-40 px-2.5 rounded max-md:mb-10">
@@ -419,8 +409,7 @@ interface Product {
                 <div className="justify-between items-stretch flex w-full gap-5 mt-2.5 py-4">
                   <span className="items-stretch flex justify-between gap-1.5">
                     <Image alt=""
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/e2b0795ec04059ced668d46c14aacebfd8e11ebca99ea41f24126d252c002520?"
+                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/e2b0795ec04059ced668d46c14aacebfd8e11ebca99ea41f24126d252c002520?"
                       className="aspect-square object-contain object-center w-4 justify-center items-center overflow-hidden shrink-0 max-w-full"
                     />
                     <div className="text-neutral-500 text-xs leading-4 tracking-wide grow whitespace-nowrap">
@@ -429,8 +418,7 @@ interface Product {
                   </span>
                   <span className="flex justify-between gap-1.5 items-start">
                     <Image alt=""
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/e9c4fb9171a3f086de5266f33b2aa3178c6da4820c582d6e967785e348505e34?"
+                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/e9c4fb9171a3f086de5266f33b2aa3178c6da4820c582d6e967785e348505e34?"
                       className="aspect-[1.14] object-contain object-center w-4 overflow-hidden shrink-0 max-w-full"
                     />
                     <div className="text-neutral-500 text-xs leading-4 tracking-wide self-stretch grow whitespace-nowrap">
@@ -443,8 +431,7 @@ interface Product {
                     Learn More
                   </div>
                   <Image alt=""
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/01c45fcadfb56d41bda9a80169692f0843c0d99828d658bacb835a09ab619318?"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/01c45fcadfb56d41bda9a80169692f0843c0d99828d658bacb835a09ab619318?"
                     className="aspect-[0.56] object-contain object-center w-[9px] overflow-hidden self-center shrink-0 max-w-full my-auto"
                   />
                 </span>
@@ -455,8 +442,7 @@ interface Product {
             <div className="items-stretch shadow-sm bg-white flex grow flex-col w-full max-md:mt-2.5">
               <div className="flex-col overflow-hidden relative flex aspect-[1.16] w-full pl-5 pr-16 pt-5 pb-12 items-start max-md:pr-5">
                 <Image alt=""
-                  loading="lazy"
-                  src="/white.png"
+                    src="/white.png"
                   className="absolute h-full w-full object-cover object-center inset-0"
                 />
                 <span className="relative text-white text-center text-sm font-bold leading-6 tracking-wide whitespace-nowrap items-stretch shadow-sm bg-red-500 aspect-[2.4166666666666665] justify-center mb-40 px-2.5 rounded max-md:mb-10">
@@ -487,8 +473,7 @@ interface Product {
                 <div className="justify-between items-stretch flex w-full gap-5 mt-2.5 py-4">
                   <span className="items-stretch flex justify-between gap-1.5">
                     <Image alt=""
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/c1f74e5502a1284224305c0654ea17bff6ab9775170614398c213c74cae08194?"
+                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/c1f74e5502a1284224305c0654ea17bff6ab9775170614398c213c74cae08194?"
                       className="aspect-square object-contain object-center w-4 justify-center items-center overflow-hidden shrink-0 max-w-full"
                     />
                     <div className="text-neutral-500 text-xs leading-4 tracking-wide grow whitespace-nowrap">
@@ -497,8 +482,7 @@ interface Product {
                   </span>
                   <span className="flex justify-between gap-1.5 items-start">
                     <Image alt=""
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/c9f7fbcdde0d34fff3ced0a1162dd3fd39962f871c3ca1fe0e7d3550f107cac0?"
+                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/c9f7fbcdde0d34fff3ced0a1162dd3fd39962f871c3ca1fe0e7d3550f107cac0?"
                       className="aspect-[1.14] object-contain object-center w-4 overflow-hidden shrink-0 max-w-full"
                     />
                     <div className="text-neutral-500 text-xs leading-4 tracking-wide self-stretch grow whitespace-nowrap">
@@ -511,8 +495,7 @@ interface Product {
                     Learn More
                   </div>
                   <Image alt=""
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/ad1306be578e7e9212b34a3393c61353ed3888e9169c2a94cb64b2598a8669b2?"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/ad1306be578e7e9212b34a3393c61353ed3888e9169c2a94cb64b2598a8669b2?"
                     className="aspect-[0.56] object-contain object-center w-[9px] overflow-hidden self-center shrink-0 max-w-full my-auto"
                   />
                 </span>
@@ -523,8 +506,7 @@ interface Product {
             <div className="items-stretch shadow-sm bg-white flex grow flex-col w-full max-md:mt-2.5">
               <div className="flex-col overflow-hidden relative flex aspect-[1.13] w-full pl-5 pr-16 pt-5 pb-12 items-start max-md:pr-5">
                 <Image alt=""
-                  loading="lazy"
-                  src="/green.png"
+                    src="/green.png"
                   className="absolute h-full w-full object-cover object-center inset-0"
                 />
                 <span className="relative text-white text-center text-sm font-bold leading-6 tracking-wide whitespace-nowrap items-stretch shadow-sm bg-red-500 aspect-[2.4166666666666665] justify-center mb-40 px-2.5 rounded max-md:mb-10">
@@ -555,8 +537,7 @@ interface Product {
                 <div className="justify-between items-stretch flex w-full gap-5 mt-2.5 py-4">
                   <span className="items-stretch flex justify-between gap-1.5">
                     <Image alt=""
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/8f9441a38b6d20a8052af12888c15028f826dd95aaa585d2c0162f44654586c6?"
+                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/8f9441a38b6d20a8052af12888c15028f826dd95aaa585d2c0162f44654586c6?"
                       className="aspect-square object-contain object-center w-4 justify-center items-center overflow-hidden shrink-0 max-w-full"
                     />
                     <div className="text-neutral-500 text-xs leading-4 tracking-wide grow whitespace-nowrap">
@@ -565,8 +546,7 @@ interface Product {
                   </span>
                   <span className="flex justify-between gap-1.5 items-start">
                     <Image alt=""
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/310b1c44b7857c79bc51bd16842e731ed02a7ef77b96270b7df2e886227b414e?"
+                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/310b1c44b7857c79bc51bd16842e731ed02a7ef77b96270b7df2e886227b414e?"
                       className="aspect-[1.14] object-contain object-center w-4 overflow-hidden shrink-0 max-w-full"
                     />
                     <div className="text-neutral-500 text-xs leading-4 tracking-wide self-stretch grow whitespace-nowrap">
@@ -579,8 +559,7 @@ interface Product {
                     Learn More
                   </div>
                   <Image alt=""
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/9ff647959f38c79e231f3bbd57f423cf0f9d2c6cfc066ea2daa8a00f6c5d2e2f?"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/9ff647959f38c79e231f3bbd57f423cf0f9d2c6cfc066ea2daa8a00f6c5d2e2f?"
                     className="aspect-[0.56] object-contain object-center w-[9px] overflow-hidden self-center shrink-0 max-w-full my-auto"
                   />
                 </span>
@@ -601,34 +580,28 @@ interface Product {
             </div>
             <span className="justify-center items-start bg-white self-stretch flex flex-col mt-7 py-8 rounded-md max-md:max-w-full">
               <Image alt=""
-                loading="lazy"
                 src="/user1.png"
                 className="aspect-square object-contain object-center w-[90px] justify-center items-center overflow-hidden self-center max-w-full"
               />
               <div className="items-stretch self-center flex w-[130px] max-w-full gap-1.5 mt-5">
                 <Image alt=""
-                  loading="lazy"
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/483bffad59283b826f53c2957fed9f1e3ee1c84a85142ed66f601fd412c30dbe?"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/483bffad59283b826f53c2957fed9f1e3ee1c84a85142ed66f601fd412c30dbe?"
                   className="aspect-square object-contain object-center w-full overflow-hidden shrink-0 flex-1"
                 />
                 <Image alt=""
-                  loading="lazy"
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/4991b09d38cc8a417eff29bd6bdfdf515b64588c3922b4bcde291eed488b2fde?"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/4991b09d38cc8a417eff29bd6bdfdf515b64588c3922b4bcde291eed488b2fde?"
                   className="aspect-square object-contain object-center w-full overflow-hidden shrink-0 flex-1"
                 />
                 <Image alt=""
-                  loading="lazy"
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/b0601fb60115f73aefd1e746e25edebac3843167733399010e371c1b9c055454?"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/b0601fb60115f73aefd1e746e25edebac3843167733399010e371c1b9c055454?"
                   className="aspect-square object-contain object-center w-full overflow-hidden shrink-0 flex-1"
                 />
                 <Image alt=""
-                  loading="lazy"
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/9f450b76191f7a7b8120649a4aaa7e5fc70dcac13855c86a1cca83e075111ce6?"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/9f450b76191f7a7b8120649a4aaa7e5fc70dcac13855c86a1cca83e075111ce6?"
                   className="aspect-square object-contain object-center w-full overflow-hidden shrink-0 flex-1"
                 />
                 <Image alt=""
-                  loading="lazy"
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/7f8d3a6e9d84424bf52ac36040f5ffbb716fef0475fe1be61971fc98e3bdaba1?"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/7f8d3a6e9d84424bf52ac36040f5ffbb716fef0475fe1be61971fc98e3bdaba1?"
                   className="aspect-square object-contain object-center w-full overflow-hidden shrink-0 flex-1"
                 />
               </div>
@@ -652,18 +625,15 @@ interface Product {
               <div className="flex flex-col items-stretch w-[33%] max-md:w-full max-md:ml-0">
                 <div className="flex grow flex-col items-center max-md:mt-5">
                   <Image alt=""
-                    loading="lazy"
-                    src="/col1.png"
+                        src="/col1.png"
                     className="aspect-square object-contain object-center w-[143px] overflow-hidden"
                   />
                   <Image alt=""
-                    loading="lazy"
-                    src="/col2.png"
+                        src="/col2.png"
                     className="aspect-[1.01] object-contain object-center w-[143px] overflow-hidden mt-4"
                   />
                   <Image alt=""
-                    loading="lazy"
-                    src="/col3.png"
+                        src="/col3.png"
                     className="aspect-[1.31] object-contain object-center w-[143px] overflow-hidden mt-4"
                   />
                 </div>
@@ -671,18 +641,15 @@ interface Product {
               <div className="flex flex-col items-stretch w-[33%] ml-5 max-md:w-full max-md:ml-0">
                 <div className="flex grow flex-col items-center max-md:mt-5">
                   <Image alt=""
-                    loading="lazy"
-                    src="/col4.png"
+                        src="/col4.png"
                     className="aspect-[0.99] object-contain object-center w-[142px] overflow-hidden"
                   />
                   <Image alt=""
-                    loading="lazy"
-                    src="/col5.png"
+                        src="/col5.png"
                     className="aspect-square object-contain object-center w-[142px] overflow-hidden mt-4"
                   />
                   <Image alt=""
-                    loading="lazy"
-                    src="/col6.png"
+                        src="/col6.png"
                     className="aspect-[1.3] object-contain object-center w-[142px] overflow-hidden mt-4"
                   />
                 </div>
@@ -690,18 +657,15 @@ interface Product {
               <div className="flex flex-col items-stretch w-[33%] ml-5 max-md:w-full max-md:ml-0">
                 <div className="flex grow flex-col items-center max-md:mt-5">
                   <Image alt=""
-                    loading="lazy"
-                    src="/col7.png"
+                        src="/col7.png"
                     className="aspect-square object-contain object-center w-[143px] overflow-hidden"
                   />
                   <Image alt=""
-                    loading="lazy"
-                    src="/col8.png"
+                        src="/col8.png"
                     className="aspect-[1.01] object-contain object-center w-[143px] overflow-hidden mt-4"
                   />
                   <Image alt=""
-                    loading="lazy"
-                    src="/col9.png"
+                        src="/col9.png"
                     className="aspect-[1.31] object-contain object-center w-[143px] overflow-hidden mt-4"
                   />
                 </div>

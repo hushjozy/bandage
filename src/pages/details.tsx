@@ -115,7 +115,6 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
           <div className="items-stretch self-stretch flex justify-between gap-2.5 py-1.5">
             <span className="items-stretch flex justify-between gap-1.5 p-2.5 rounded-md">
               <Image alt=""
-                loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/9e9cd324c49336a6c99c6d247942b6b938d6b3c674ae6185475adaa8b2942497?"
                 className="aspect-square object-contain object-center w-4 overflow-hidden shrink-0 max-w-full"
               />
@@ -125,7 +124,6 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
             </span>
             <span className="items-stretch flex justify-between gap-1.5 p-2.5 rounded-md">
               <Image alt=""
-                loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/a59bfafc5876173e10ea3ade29b24a7f806f4c8f47069d9dacd4fd9956cd75a5?"
                 className="aspect-square object-contain object-center w-4 overflow-hidden shrink-0 max-w-full"
               />
@@ -239,7 +237,6 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
           <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
             <div className="flex flex-col items-stretch w-[53%] max-md:w-full max-md:ml-0">
               <Image alt=""
-                loading="lazy"
                 src={productItem.thumbnail}
                 className="aspect-[0.93] object-contain object-center w-full overflow-hidden grow max-md:max-w-full max-md:mt-10"
               />
@@ -252,28 +249,23 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
                 <span className="flex gap-2.5 mt-4 items-start">
                   <div className="items-stretch flex gap-1.5">
                     <Image alt=""
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/8821eaa30b394c533db44fc150210b48d1153a938d99f9b5ed9af2cd3af34e90?"
+                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/8821eaa30b394c533db44fc150210b48d1153a938d99f9b5ed9af2cd3af34e90?"
                       className="aspect-square object-contain object-center w-[22px] overflow-hidden shrink-0 max-w-full"
                     />
                     <Image alt=""
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/be8f5fda7d73bc5e6d0f3ea4e0e61d61464ac599c05b3aa58f37291e27a43c38?"
+                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/be8f5fda7d73bc5e6d0f3ea4e0e61d61464ac599c05b3aa58f37291e27a43c38?"
                       className="aspect-square object-contain object-center w-[22px] overflow-hidden shrink-0 max-w-full"
                     />
                     <Image alt=""
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/76c6a044048f72e129f169c6b838cb664836a80cae66aef9788b984b19fd46f1?"
+                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/76c6a044048f72e129f169c6b838cb664836a80cae66aef9788b984b19fd46f1?"
                       className="aspect-square object-contain object-center w-[22px] overflow-hidden shrink-0 max-w-full"
                     />
                     <Image alt=""
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/ff72e68d5389c7c4ea1b76757295b3c1111a45779f6fe1a4b4c15616f16dd264?"
+                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/ff72e68d5389c7c4ea1b76757295b3c1111a45779f6fe1a4b4c15616f16dd264?"
                       className="aspect-square object-contain object-center w-[22px] overflow-hidden shrink-0 max-w-full"
                     />
                     <Image alt=""
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/9db51f2767cfc0935f3f7a28db455cd5dde1c17e36066af2834e6ef491e146a7?"
+                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/9db51f2767cfc0935f3f7a28db455cd5dde1c17e36066af2834e6ef491e146a7?"
                       className="aspect-square object-contain object-center w-[22px] overflow-hidden shrink-0 max-w-full"
                     />
                   </div>
@@ -304,21 +296,18 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
                     Select Options
                   </span>
                   <Image alt=""
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/302f9fb81fc31d29023e1deb4e7d6bbd121e1725d8e19ef423a3c7bfd70a44ec?"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/302f9fb81fc31d29023e1deb4e7d6bbd121e1725d8e19ef423a3c7bfd70a44ec?"
                     className="aspect-square object-contain object-center w-10 justify-center items-center overflow-hidden shrink-0 max-w-full self-start"
                     onClick={()=>handleAddToWishlist(productItem)}
 
                   />
                   <Image alt=""
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/68cb672f9d1ba10ec9ed92bcd129fb9bf82593728d69d212ae41f0465e38821c?"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/68cb672f9d1ba10ec9ed92bcd129fb9bf82593728d69d212ae41f0465e38821c?"
                     className="aspect-square object-contain object-center w-10 justify-center items-center overflow-hidden shrink-0 max-w-full self-start"
                   
                   onClick={()=>handleAddToCart(productItem)}/>
                   <Image alt=""
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/5275ec0ff01b3fa42c2254ff7701fd1cbe7542ea1b8716022578ca7a843b197d?"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/5275ec0ff01b3fa42c2254ff7701fd1cbe7542ea1b8716022578ca7a843b197d?"
                     className="aspect-square object-contain object-center w-10 justify-center items-center overflow-hidden shrink-0 max-w-full self-start"
                   />
                 </div>
@@ -373,7 +362,6 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
             </div>
             <div className="flex flex-col items-stretch w-[42%] ml-5 max-md:w-full max-md:ml-0">
               <Image alt=""
-                loading="lazy"
                 src={productItem?.images && productItem?.images[0]}
                 className="aspect-[1.09] object-contain object-center w-full overflow-hidden grow max-md:max-w-full max-md:mt-8"
               />
@@ -392,8 +380,7 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
               <div className="flex flex-col items-stretch w-3/12 max-md:w-full max-md:ml-0">
                 <div className="items-stretch bg-white flex grow flex-col w-full max-md:mt-8">
                   <Image alt=""
-                    loading="lazy"
-                    src="..."
+                        src="..."
                     className="aspect-[0.85] object-contain object-center w-full overflow-hidden"
                   />
                   <span className="items-stretch flex flex-col pl-6 pr-16 py-8 max-md:px-5">
@@ -432,7 +419,6 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
               key={index}
             >
               <Image 
-                loading="lazy"
                 src={product?.thumbnail}
                 className="aspect-[0.77] object-contain object-center w-full h-48 overflow-hidden"
                 alt={product?.title}
