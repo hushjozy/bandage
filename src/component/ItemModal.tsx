@@ -1,14 +1,14 @@
 // components/ItemModal.tsx
 import React from 'react';
 import  Modal from 'react-modal';
-import { CartItem, WishlistItem , removeFromCart, removeFromWishlist} from '../redux/cartSlice';
+import { removeFromCart, removeFromWishlist} from '../redux/cartSlice';
 import { useDispatch } from 'react-redux';
 import { Image } from 'theme-ui';
 
 interface ItemModalProps {
   isOpen: boolean;
   onClose: () => void;
-    items: CartItem[] | WishlistItem[];
+    items: any;
     isCart: boolean
 }
 
@@ -46,7 +46,7 @@ const ItemModal: React.FC<ItemModalProps> = ({ isOpen, onClose, items, isCart })
           </thead>
           <tbody>
                       {items.map((item) => {
-                          const discountedPrice = (item as CartItem)?.price - parseInt((item as CartItem)?.price * ((item as CartItem)?.discountPercentage / 100)) 
+                          const discountedPrice = (item as any)?.price - (item as any)?.price * ((item as any)?.discountPercentage / 100) 
 return(
                 
               <tr key={item.id} className="border">
@@ -70,7 +70,7 @@ onClick={() => handleRemoveItem(item.id)}        className=" px-10  bg-sky-500 o
     <td className="py-2 px-4 border w-16 h-16 w-1/4 balancetab"></td>
     <td className="py-2 px-4 border w-1/4 balancetab" >
     <b>$
-      {items.reduce((total, item) => total + ((item as CartItem)?.price - parseInt((item as CartItem)?.price * ((item as CartItem)?.discountPercentage / 100))), 0)}</b>
+      {items.reduce((total, item) => total + ((item as any)?.price - (item as any)?.price * ((item as any)?.discountPercentage / 100)), 0)}</b>
     </td>
    
   </tr>

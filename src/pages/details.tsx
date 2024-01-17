@@ -33,11 +33,23 @@ interface Product {
   id:number
 }
 const Details: React.FC<DetailsProps> = ({ className }) => {
-  const [productItem, setProductItem] = React.useState<Item>({});
+  const [productItem, setProductItem] = React.useState<Item>({
+    id: 0,
+    title: "",
+    description: "",
+  price: 0,
+  discountPercentage: 0,
+  rating: 0,
+  stock: 0,
+  brand: "",
+  category: "",
+  thumbnail: "",
+  images: []
+  });
   const [products, setProducts] = React.useState<Product[]>([]);
   const dispatch = useDispatch();
   const searchParams = useSearchParams()
-  const id: number = searchParams.get("id")
+  const id: string | null = searchParams?.get("id") ?? null;
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const wishlist = useSelector((state: RootState) => state.cart.wishlistItems);
   const [isCartModalOpen, setCartModalOpen] = React.useState(false);
@@ -50,7 +62,7 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
   const openWishlistModal = () => setWishlistModalOpen(true);
   const closeWishlistModal = () => setWishlistModalOpen(false);
 
-  const discountedPrice = productItem?.price - parseInt(productItem?.price * (productItem?.discountPercentage / 100)) 
+  const discountedPrice = productItem?.price - productItem?.price * (productItem?.discountPercentage / 100)
   console.log(id);
   
   React.useEffect(() => {
@@ -91,7 +103,9 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
   }, [id]); 
 
   React.useEffect(() => {
-    fetchSingleProduct(id)
+    if (id !== null) {
+      fetchSingleProduct(parseInt(id))
+    }
   }, [id])
   
   return (
@@ -406,7 +420,7 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
           <div className="grid grid-cols-4 gap-5 max-md:max-w-full max-md:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {/* map render item here */}
         {products?.map((product, index) => {
-          const discountedPrice= product?.price - parseInt(product?.price  * (product?.discountPercentage/100))
+          const discountedPrice= product?.price - product?.price  * (product?.discountPercentage/100)
           return (
             <Link
             href={{

@@ -254,7 +254,7 @@ interface Product {
       <div className="grid grid-cols-5 gap-5 max-md:max-w-full max-md:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {/* map render item here */}
         {products?.map((product, index) => {
-          const discountedPrice= product?.price - parseInt(product?.price  * (product?.discountPercentage/100))
+          const discountedPrice= product?.price - product?.price  * (product?.discountPercentage/100)
           return (
             <Link
             href={{

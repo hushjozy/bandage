@@ -4,9 +4,8 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface CartItem {
   id: number;
-  name: string;
+  title: string;
   price: number;
-  quantity: number;
 }
 interface WishlistItem {
   id: number;
@@ -32,7 +31,7 @@ const cartSlice = createSlice({
       const existingItem = state.items.find(item => item.id === action.payload.id);
 
       if (existingItem) {
-        existingItem.quantity += 1;
+        // existingItem.quantity += 1;
       } else {
         state.items.push(action.payload);
       }
@@ -53,5 +52,5 @@ const cartSlice = createSlice({
   },
 });
 
-export const {CartItem,WishlistItem, addToCart,addToWishlist,removeFromCart,removeFromWishlist } = cartSlice.actions;
+export const { addToCart,addToWishlist,removeFromCart,removeFromWishlist } = cartSlice.actions;
 export default cartSlice.reducer;
