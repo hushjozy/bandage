@@ -46,3 +46,12 @@ body {
   justify-content: center;
   text-align: center;
 }
+@media screen and (max-width: 450px) {
+  .mobImg {
+    height: 331px;
+    margin-top: 0px;
+  }
+  .mobImgTop {
+    margin-bottom: 15px;
+  }
+}
