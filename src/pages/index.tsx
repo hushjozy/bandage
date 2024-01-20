@@ -10,7 +10,8 @@ interface Product {
   price: number;
   thumbnail: string;
   discountPercentage: number;
-  id:number
+  id: number,
+  brand: string;
 }
 
  const HomePage: React.FC = () => {
@@ -329,7 +330,7 @@ interface Product {
                   {product?.title}
                 </div>
                 <div className="text-neutral-500 text-center text-sm font-bold leading-6 tracking-wide whitespace-nowrap mt-2.5">
-                  English Department
+                 {product?.brand}
                 </div>
                 <span className="flex gap-1.5 mt-2.5 px-1 py-1.5">
                   <div className="text-stone-300 text-center text-base font-bold leading-6 tracking-normal whitespace-nowrap">
