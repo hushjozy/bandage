@@ -315,7 +315,8 @@ interface Product {
               query: { id: product?.id }
             }}
             passHref
-            className="bg-white flex flex-col max-w-full"            key={index}
+              className="bg-white flex flex-col max-w-full"
+              key={index}
           >
               <Image   width={183}
         height={238}  

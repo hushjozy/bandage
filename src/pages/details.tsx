@@ -320,7 +320,7 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
            {
                     productItem?.images?.map((image:string,i:number) => {
                       if (image === primeImage) {
-                        return <img
+                        return <img key ={i}
                         src="https://cdn.builder.io/api/v1/image/assets/TEMP/2e92b9190747e578acc595c508360a2c58f8338834297efc604fbdff2f416d29?"                        className="aspect-[0.55] object-contain object-center w-6 justify-center items-center overflow-hidden shrink-0 max-w-full"
                       onClick={()=>setPrimeImage(primeImage === productItem?.images[productItem?.images?.length-1] ? productItem?.thumbnail: productItem?.images[i+1])}
                     />
@@ -333,8 +333,8 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
       </div>
       <div className="flex w-[219px] max-w-full items-stretch gap-5 mt-5 self-start">
       {
-                    productItem?.images.map((image) => {
-                      return(<img
+                    productItem?.images.map((image,i) => {
+                      return(<img key ={i}
                       loading="lazy"
                       src={image}
                       className="aspect-[1.33] object-contain object-center w-full justify-center items-center overflow-hidden shrink-0 flex-1"
@@ -520,16 +520,17 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
           </div> */}
         {/* map render item here */}
         <div className="grid gap-5 max-w-full md:grid-cols-2 lg:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-          {products?.map((product, index) => {
+          {products?.map((product, i) => {
           const discountedPrice= product?.price - product?.price  * (product?.discountPercentage/100)
           return (
             <Link
+            key ={i}
             href={{
               pathname: `/details`,
               query: { id: product?.id }
             }}
             passHref
-            className="bg-white flex flex-col max-w-full"            key={index}
+            className="bg-white flex flex-col max-w-full"
           >
               <Image   width={183}
         height={238}  
