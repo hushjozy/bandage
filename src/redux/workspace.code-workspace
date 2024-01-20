@@ -38,6 +38,9 @@
 	},
 	{
 		"path": "../../../../dice"
+	},
+	{
+		"path": "../../../../dice-frontend"
 	}
 ],
   "settings": {

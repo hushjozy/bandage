@@ -17,6 +17,8 @@ interface Product {
   const [products, setProducts] = React.useState<Product[]>([]);
    const [limit, setLimit] = React.useState<number>(10);
    const [loading, setLoading] = React.useState<boolean>(true);
+   const [menu, setMenu] = React.useState<boolean>(false);
+
   //  const router = useRouter();
    
   const fetchProducts = async () => {
@@ -41,11 +43,11 @@ interface Product {
   return (<div className="items-stretch bg-white flex flex-col">
   <div className="justify-end items-stretch bg-white flex w-full flex-col max-md:max-w-full">
       {/* mobile nav */}
-      <span className="bg-white flex max-w-[414px] flex-col px-9 py-11 hidden max-md:block">
+      <span className="bg-white flex max-w-[414px] flex-col px-9 py-11 hidden max-md:block w-full">
       <span className="self-stretch flex w-full justify-between gap-5 items-start">
-        <div className="text-slate-800 text-2xl font-bold leading-8 tracking-normal">
+        <Link href={"/"} className="text-slate-800 text-2xl font-bold leading-8 tracking-normal">
           Bandage
-        </div>
+        </Link>
         <div className="flex items-stretch justify-between gap-5">
           <img
             loading="lazy"
@@ -61,9 +63,11 @@ interface Product {
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/7f1a4aed3b45428e3c754fdb77224d5da7c17d55a38243e4042b4ed4d0ee1068?"
             className="aspect-[1.71] object-contain object-center w-6 overflow-hidden self-center shrink-0 max-w-full my-auto"
-          />
+          onClick={()=> setMenu(!menu)}
+            />
         </div>
-      </span>
+        </span>
+       {menu && <div className="w-full">
       <div className="text-neutral-500 text-center text-3xl leading-10 tracking-wide self-center whitespace-nowrap mt-24">
         Home
       </div>
@@ -75,7 +79,8 @@ interface Product {
       </div>
       <div className="text-neutral-500 text-center text-3xl leading-10 tracking-wide self-center whitespace-nowrap mt-8 mb-12">
         Contact
-      </div>
+          </div>
+        </div>}
       </span>
       {/* desktop */}
 
@@ -120,9 +125,9 @@ interface Product {
       </div>
       <div className="flex items-center justify-between gap-5 mt-3.5 mx-7 px-px max-md:max-w-full max-md:flex-wrap max-md:mr-2.5">
         <span className="flex justify-between gap-5 my-auto items-start max-md:max-w-full max-md:flex-wrap">
-          <div className="text-slate-800 text-2xl font-bold leading-8 tracking-normal">
+          <Link href={"/"} className="text-slate-800 text-2xl font-bold leading-8 tracking-normal">
             Bandage
-          </div>
+          </Link>
           <span className="items-start flex justify-between gap-3 px-px py-1.5">
             <div className="text-neutral-500 text-center text-sm font-bold leading-6 tracking-wide grow whitespace-nowrap self-start">
               Home
@@ -300,7 +305,8 @@ interface Product {
           </div>
         </span>
       </div>
-      <div className="grid gap-5 max-w-full md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">        {products?.map((product, index) => {
+        <div className="grid gap-5 max-w-full md:grid-cols-2 lg:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+          {products?.map((product, index) => {
           const discountedPrice= product?.price - product?.price  * (product?.discountPercentage/100)
           return (
             <Link
@@ -329,7 +335,7 @@ interface Product {
                     ${product?.price}
                   </div>
                   <div className="text-teal-700 text-center text-base font-bold leading-6 tracking-normal whitespace-nowrap">
-                    ${discountedPrice}
+                    ${discountedPrice.toFixed(2)}
                   </div>
                 </span>
               </span>

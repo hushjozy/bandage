@@ -1,6 +1,6 @@
 "use client";
 
-import { addToCart, addToWishlist } from "@/redux/cartSlice";
+import { addToCart, addToWishlist, CartItem } from "@/redux/cartSlice";
 import React from "react";
 import Link from "../../node_modules/next/link";
 import { useSearchParams } from "../../node_modules/next/navigation";
@@ -24,6 +24,7 @@ interface Item {
   category: string;
   thumbnail: string;
   images: string[];
+  quantity: number
 }
 interface Product {
   title: string;
@@ -43,10 +44,13 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
   stock: 0,
   brand: "",
   category: "",
-  thumbnail: "",
+    thumbnail: "",
+    quantity: 0,
   images: []
   });
   const [products, setProducts] = React.useState<Product[]>([]);
+  const [primeImage, setPrimeImage] = React.useState<string>("");
+  const [menu, setMenu] = React.useState<boolean>(false);
   const dispatch = useDispatch();
   const searchParams = useSearchParams()
   const id: string | null = searchParams?.get("id") ?? null;
@@ -69,6 +73,11 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
    console.log(cartItems);
    
   }, [cartItems])
+
+  React.useEffect(() => {
+    setPrimeImage(productItem?.thumbnail)
+  }, [productItem?.thumbnail])
+  
   
   const fetchSingleProduct = async (id:number) => {
     try {
@@ -80,7 +89,7 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
       console.error("Error fetching products:", error);
     }
   };
-  const handleAddToCart = (item:Item) => {
+  const handleAddToCart = (item:CartItem) => {
     dispatch(addToCart(item));
   };
   const handleAddToWishlist = (item: Item) => {
@@ -111,11 +120,11 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
   return (
     <div className="items-start bg-white flex flex-col">
        {/* mobile nav */}
-      <span className="bg-white flex max-w-[414px] flex-col px-9 py-11 hidden max-md:block">
+      <span className="bg-white flex max-w-[414px] flex-col px-9 py-11 hidden max-md:block w-full">
       <span className="self-stretch flex w-full justify-between gap-5 items-start">
-        <div className="text-slate-800 text-2xl font-bold leading-8 tracking-normal">
+        <Link href={"/"} className="text-slate-800 text-2xl font-bold leading-8 tracking-normal">
           Bandage
-        </div>
+        </Link>
         <div className="flex items-stretch justify-between gap-5">
           <img
             loading="lazy"
@@ -131,9 +140,11 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/7f1a4aed3b45428e3c754fdb77224d5da7c17d55a38243e4042b4ed4d0ee1068?"
             className="aspect-[1.71] object-contain object-center w-6 overflow-hidden self-center shrink-0 max-w-full my-auto"
-          />
+          onClick={()=> setMenu(!menu)}
+            />
         </div>
-      </span>
+        </span>
+       {menu && <div className="w-full">
       <div className="text-neutral-500 text-center text-3xl leading-10 tracking-wide self-center whitespace-nowrap mt-24">
         Home
       </div>
@@ -145,7 +156,8 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
       </div>
       <div className="text-neutral-500 text-center text-3xl leading-10 tracking-wide self-center whitespace-nowrap mt-8 mb-12">
         Contact
-      </div>
+          </div>
+        </div>}
       </span>
       {/* desktop */}
 
@@ -191,9 +203,9 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
       <div className="flex items-center justify-between gap-5 mt-3.5 mx-7 px-px max-md:max-w-full max-md:flex-wrap max-md:mr-2.5">
         
       <span className="flex items-stretch justify-between gap-20 w-full px-16 max-md:flex-wrap">
-      <div className="text-slate-800 text-2xl font-bold leading-8 w-70 tracking-normal my-auto">
+      <Link href={"/"} className="text-slate-800 text-2xl font-bold leading-8 w-70 tracking-normal my-auto">
         Bandage
-      </div>
+      </Link>
       <span className="items-start self-center flex justify-between gap-3 my-auto px-px py-1.5">
         <div className="text-neutral-500 text-center text-sm font-bold leading-6 tracking-wide grow whitespace-nowrap self-start">
           Home
@@ -231,7 +243,7 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
             Login / Register
           </div>
         </span>
-        <Image   width={1000}
+        <img   width={1000}
         height={1000}  alt=""
           loading="lazy"
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/7c53e819623fd3eaf742e83aa54e2ac16d02c3bfa5f2c67a6716b6662fbd0bdf?"
@@ -284,13 +296,55 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
       <div className="justify-center items-center self-stretch bg-neutral-50 flex w-full flex-col pb-12 px-16 max-md:max-w-full max-md:px-5">
         <div className="w-[1050px] max-w-full py-0.5 max-md:pr-5">
           <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
-            <div className="flex flex-col items-stretch w-[53%] max-md:w-full max-md:ml-0">
+            {/* <div className="flex flex-col items-stretch w-[53%] max-md:w-full max-md:ml-0">
               <Image   width={1000}
         height={1000}  alt=""
                 src={productItem.thumbnail}
                 className="aspect-[0.93] object-contain object-center w-full overflow-hidden grow max-md:max-w-full max-md:mt-10"
               />
-            </div>
+            </div> */}
+
+<div className="flex flex-col items-stretch w-[53%] max-md:w-full max-md:ml-0">
+      <div className="flex-col overflow-hidden relative flex min-h-[450px] w-full justify-center items-stretch pl-10 pr-9 py-12 max-md:max-w-full max-md:px-5">
+        <Image   width={1000}
+        height={1000} alt="product image"
+          src={primeImage}
+          className="absolute h-full w-full object-cover object-center inset-0"
+        />
+        <div className="relative flex items-stretch justify-end gap-[89%] mt-[17%] mb-16 max-md:max-w-full max-md:flex-wrap max-md:my-10">
+        {primeImage === productItem?.thumbnail && <img
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/865eb41b8828bb22652a9d28e58c38ee65931e80c8cd680fc9c009b7201ce49c?"
+                        className="aspect-[0.55] object-contain object-center w-6 justify-center items-center overflow-hidden shrink-0 max-w-full"
+                      onClick={()=>setPrimeImage(productItem?.images[0])}
+                    />} 
+           {
+                    productItem?.images?.map((image:string,i:number) => {
+                      if (image === primeImage) {
+                        return <img
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/2e92b9190747e578acc595c508360a2c58f8338834297efc604fbdff2f416d29?"                        className="aspect-[0.55] object-contain object-center w-6 justify-center items-center overflow-hidden shrink-0 max-w-full"
+                      onClick={()=>setPrimeImage(primeImage === productItem?.images[productItem?.images?.length-1] ? productItem?.thumbnail: productItem?.images[i+1])}
+                    />
+                      }
+                     
+                    })
+                  }
+                 
+        </div>
+      </div>
+      <div className="flex w-[219px] max-w-full items-stretch gap-5 mt-5 self-start">
+      {
+                    productItem?.images.map((image) => {
+                      return(<img
+                      loading="lazy"
+                      src={image}
+                      className="aspect-[1.33] object-contain object-center w-full justify-center items-center overflow-hidden shrink-0 flex-1"
+                    />)
+                    })
+          }
+               
+       
+      </div>
+    </div>
             <div className="flex flex-col items-stretch w-[47%] ml-5 max-md:w-full max-md:ml-0">
               <span className="flex flex-col mt-5 items-start max-md:max-w-full max-md:mt-10">
                 <div className="text-slate-800 text-xl leading-8 tracking-wide self-stretch max-md:max-w-full">
@@ -298,28 +352,28 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
                 </div>
                 <span className="flex gap-2.5 mt-4 items-start">
                   <div className="items-stretch flex gap-1.5">
-                    <Image   width={1000}
-        height={1000}  alt=""
+                    <img   width={40}
+        height={40}   alt=""
                             src="https://cdn.builder.io/api/v1/image/assets/TEMP/8821eaa30b394c533db44fc150210b48d1153a938d99f9b5ed9af2cd3af34e90?"
                       className="aspect-square object-contain object-center w-[22px] overflow-hidden shrink-0 max-w-full"
                     />
-                    <Image   width={1000}
-        height={1000}  alt=""
+                    <img   width={40}
+        height={40}   alt=""
                             src="https://cdn.builder.io/api/v1/image/assets/TEMP/be8f5fda7d73bc5e6d0f3ea4e0e61d61464ac599c05b3aa58f37291e27a43c38?"
                       className="aspect-square object-contain object-center w-[22px] overflow-hidden shrink-0 max-w-full"
                     />
-                    <Image   width={1000}
-        height={1000}  alt=""
+                    <img   width={40}
+        height={40}  alt=""
                             src="https://cdn.builder.io/api/v1/image/assets/TEMP/76c6a044048f72e129f169c6b838cb664836a80cae66aef9788b984b19fd46f1?"
                       className="aspect-square object-contain object-center w-[22px] overflow-hidden shrink-0 max-w-full"
                     />
-                    <Image   width={1000}
-        height={1000}  alt=""
+                    <img   width={40}
+        height={40}   alt=""
                             src="https://cdn.builder.io/api/v1/image/assets/TEMP/ff72e68d5389c7c4ea1b76757295b3c1111a45779f6fe1a4b4c15616f16dd264?"
                       className="aspect-square object-contain object-center w-[22px] overflow-hidden shrink-0 max-w-full"
                     />
-                    <Image   width={1000}
-        height={1000}  alt=""
+                    <img   width={40}
+        height={40}   alt=""
                             src="https://cdn.builder.io/api/v1/image/assets/TEMP/9db51f2767cfc0935f3f7a28db455cd5dde1c17e36066af2834e6ef491e146a7?"
                       className="aspect-square object-contain object-center w-[22px] overflow-hidden shrink-0 max-w-full"
                     />
@@ -329,7 +383,7 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
                   </div>
                 </span>
                 <div className="text-slate-800 text-center text-2xl font-bold leading-8 tracking-normal self-stretch mt-6 max-md:max-w-full">
-                  ${discountedPrice}
+                  ${discountedPrice.toFixed(2)}
                 </div>
                 <span className="items-stretch flex gap-1.5 mt-2">
                   <div className="text-neutral-500 text-sm font-bold leading-6 tracking-wide grow whitespace-nowrap">
@@ -341,29 +395,29 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
                 </span>
                 <div className="bg-stone-300 self-stretch shrink-0 h-px mt-28 max-md:max-w-full max-md:mt-10" />
                 <div className="items-stretch flex w-[150px] max-w-full gap-2.5 mt-7">
-                  <div className="flex shrink-0 h-[30px] flex-col flex-1 rounded-[50%]" />
-                  <div className="flex shrink-0 h-[30px] flex-col flex-1 rounded-[50%]" />
-                  <div className="flex shrink-0 h-[30px] flex-col flex-1 rounded-[50%]" />
-                  <div className="flex shrink-0 h-[30px] flex-col flex-1 rounded-[50%]" />
+                  <div className="flex shrink-0 h-[30px] flex-col flex-1 bg-sky-500 rounded-[50%]" />
+                  <div className="flex shrink-0 h-[30px] flex-col flex-1 bg-green-500 rounded-[50%]" />
+                  <div className="flex shrink-0 h-[30px] flex-col flex-1 bg-orange-400 rounded-[50%]" />
+                  <div className="flex shrink-0 h-[30px] flex-col flex-1 bg-slate-800 rounded-[50%]" />
                 </div>
                 <div className="items-start self-stretch flex gap-2.5 mt-16 pr-20 max-md:max-w-full max-md:flex-wrap max-md:mt-10 max-md:pr-5">
                   <span className="text-white text-center text-sm font-bold leading-6 tracking-wide whitespace-nowrap items-stretch bg-sky-500 self-stretch grow justify-center px-5 py-2.5 rounded-md">
                     Select Options
                   </span>
-                  <Image   width={1000}
+                  <img   width={1000}
         height={1000}  alt=""
                         src="https://cdn.builder.io/api/v1/image/assets/TEMP/302f9fb81fc31d29023e1deb4e7d6bbd121e1725d8e19ef423a3c7bfd70a44ec?"
                     className="aspect-square object-contain object-center w-10 justify-center items-center overflow-hidden shrink-0 max-w-full self-start"
                     onClick={()=>handleAddToWishlist(productItem)}
 
                   />
-                  <Image   width={1000}
+                  <img   width={1000}
         height={1000}  alt=""
                         src="https://cdn.builder.io/api/v1/image/assets/TEMP/68cb672f9d1ba10ec9ed92bcd129fb9bf82593728d69d212ae41f0465e38821c?"
                     className="aspect-square object-contain object-center w-10 justify-center items-center overflow-hidden shrink-0 max-w-full self-start"
                   
                   onClick={()=>handleAddToCart(productItem)}/>
-                  <Image   width={1000}
+                  <img   width={1000}
         height={1000}  alt=""
                         src="https://cdn.builder.io/api/v1/image/assets/TEMP/5275ec0ff01b3fa42c2254ff7701fd1cbe7542ea1b8716022578ca7a843b197d?"
                     className="aspect-square object-contain object-center w-10 justify-center items-center overflow-hidden shrink-0 max-w-full self-start"
@@ -464,9 +518,9 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
 
             </div>
           </div> */}
-          <div className="grid grid-cols-4 gap-5 max-md:max-w-full max-md:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {/* map render item here */}
-        <div className="grid gap-5 max-w-full md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">        {products?.map((product, index) => {
+        <div className="grid gap-5 max-w-full md:grid-cols-2 lg:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+          {products?.map((product, index) => {
           const discountedPrice= product?.price - product?.price  * (product?.discountPercentage/100)
           return (
             <Link
@@ -495,14 +549,13 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
                     ${product?.price}
                   </div>
                   <div className="text-teal-700 text-center text-base font-bold leading-6 tracking-normal whitespace-nowrap">
-                    ${discountedPrice}
+                    ${discountedPrice.toFixed(2)}
                   </div>
                 </span>
               </span>
             </Link>
           );
         })}
-      </div>
       </div>
         </span>
       </div>
