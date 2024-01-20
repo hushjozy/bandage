@@ -26,13 +26,14 @@ interface Item {
   images: string[];
   quantity: number
 }
-interface Product {
-  title: string;
-  price: number;
-  thumbnail: string;
-  discountPercentage: number;
-  id:number
-}
+// interface Product {
+//   title: string;
+//   price: number;
+//   thumbnail: string;
+//   discountPercentage: number;
+//   id: number;  brand: string;
+
+// }
 const Details: React.FC<DetailsProps> = ({ className }) => {
   const [productItem, setProductItem] = React.useState<Item>({
     id: 0,
@@ -48,7 +49,7 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
     quantity: 0,
   images: []
   });
-  const [products, setProducts] = React.useState<Product[]>([]);
+  const [products, setProducts] = React.useState<Item[]>([]);
   const [primeImage, setPrimeImage] = React.useState<string>("");
   const [menu, setMenu] = React.useState<boolean>(false);
   const dispatch = useDispatch();
@@ -101,7 +102,7 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
     try {
       const response = await fetch(`https://dummyjson.com/products?limit=${10}&select=id,title,price,thumbnail,discountPercentage`);
       const data = await response.json();
-      const products: Product[] = data.products
+      const products: Item[] = data.products
       setProducts(products);
     } catch (error) {
       console.error("Error fetching products:", error);
@@ -455,7 +456,7 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
             <div className="flex flex-col items-stretch w-[58%] max-md:w-full max-md:ml-0">
               <span className="items-stretch flex flex-col pb-6 px-5 rounded-lg max-md:max-w-full max-md:mt-8">
                 <div className="text-slate-800 text-2xl font-bold leading-8 tracking-normal max-md:max-w-full">
-                  the quick fox jumps over{" "}
+                 {productItem?.brand}{" "}
                 </div>
                 <div className="text-neutral-500 text-sm leading-5 tracking-wide mt-8 max-md:max-w-full">
                  {productItem?.description}
@@ -488,37 +489,7 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
             BESTSELLER PRODUCTS
           </div>
           <div className="bg-gray-200 flex shrink-0 h-0.5 flex-col mt-6 max-md:max-w-full" />
-          {/* <div className="mt-6 px-px max-md:max-w-full">
-            <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
-              <div className="flex flex-col items-stretch w-3/12 max-md:w-full max-md:ml-0">
-                <div className="items-stretch bg-white flex grow flex-col w-full max-md:mt-8">
-                  <Image   width={1000}
-        height={1000}  alt=""
-                        src="..."
-                    className="aspect-[0.85] object-contain object-center w-full overflow-hidden"
-                  />
-                  <span className="items-stretch flex flex-col pl-6 pr-16 py-8 max-md:px-5">
-                    <div className="text-slate-800 text-base font-bold leading-6 tracking-normal whitespace-nowrap">
-                      Graphic Design
-                    </div>
-                    <div className="text-neutral-500 text-sm font-bold leading-6 tracking-wide whitespace-nowrap mt-2.5">
-                      English Department
-                    </div>
-                    <span className="items-stretch flex justify-between gap-1.5 mt-2.5 px-1 py-1.5">
-                      <div className="text-stone-300 text-center text-base font-bold leading-6 tracking-normal grow whitespace-nowrap">
-                        $16.48
-                      </div>
-                      <div className="text-teal-700 text-center text-base font-bold leading-6 tracking-normal grow whitespace-nowrap">
-                        $6.48
-                      </div>
-                    </span>
-                  </span>
-                </div>
-              </div>
-
-            </div>
-          </div> */}
-        {/* map render item here */}
+          
         <div className="grid gap-5 max-w-full md:grid-cols-2 lg:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {products?.map((product, i) => {
           const discountedPrice= product?.price - product?.price  * (product?.discountPercentage/100)
@@ -543,7 +514,7 @@ const Details: React.FC<DetailsProps> = ({ className }) => {
                   {product?.title}
                 </div>
                 <div className="text-neutral-500 text-center text-sm font-bold leading-6 tracking-wide whitespace-nowrap mt-2.5">
-                  English Department
+                  {product?.brand}
                 </div>
                 <span className="flex gap-1.5 mt-2.5 px-1 py-1.5">
                   <div className="text-stone-300 text-center text-base font-bold leading-6 tracking-normal whitespace-nowrap">
